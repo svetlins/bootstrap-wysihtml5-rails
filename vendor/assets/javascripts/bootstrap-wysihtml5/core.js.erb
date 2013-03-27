@@ -74,8 +74,8 @@
               "<a class='btn' data-wysihtml5-command='insertImage' title='" + locale.image.insert + "'><i class='icon-picture'></i></a>" +
             "</li>";
         },
-        
-        "video": function(locale) { 
+
+        "video": function(locale) {
     		return "<li>" +
 	            "<div class='bootstrap-wysihtml5-insert-video-modal modal hide fade'>" +
 	                "<div class='modal-header'>" +
@@ -98,7 +98,7 @@
 	            "<a class='btn' data-wysihtml5-command='insertVideo' title='" + locale.video.insert + "'><i class='icon-film'></i></a>" +
 	       "</li>";
 	    },
-	    
+
         "html": function(locale) {
             return "<li>" +
               "<div class='btn-group'>" +
@@ -204,7 +204,7 @@
                     if(key === "image") {
                         this.initInsertImage(toolbar);
                     }
-                    
+
                     if(key === "video") {
                         this.initInsertVideo(toolbar);
                     }
@@ -287,7 +287,7 @@
                 }
             });
         },
-        
+
         initInsertVideo: function(toolbar) {
             var self = this;
             var insertVideoModal = toolbar.find('.bootstrap-wysihtml5-insert-video-modal');
@@ -307,7 +307,7 @@
 
                     urlInput.val(linkUrl);
                     self.editor.currentView.element.focus();
-                    self.editor.composer.commands.exec("insertVideo", { src: embedUrl, width: '398', height: '224' });
+                    self.editor.composer.commands.exec("insertVideo", { src: embedUrl, width: '570', height: '325' });
                 } else {
                     errorSpan.show();
                     //urlInput.parent().addClass('error');
@@ -428,7 +428,7 @@
             return methods.init.apply( this, arguments );
         } else {
             $.error( 'Method ' +  method + ' does not exist on jQuery.wysihtml5' );
-        }    
+        }
     };
 
     $.fn.wysihtml5.Constructor = Wysihtml5;
@@ -568,9 +568,9 @@
 }(window.jQuery, window.wysihtml5);
 
 
-/** Insert Video Functions 
- * 
- */ 
+/** Insert Video Functions
+ *
+ */
 
 (function(wysihtml5) {
     var NODE_NAME = "IFRAME";
@@ -674,7 +674,7 @@
 
 (function(wysihtml5) {
   wysihtml5.commands.insertEmbedVideo = {
-    /**     
+    /**
      * @example
      *    wysihtml5.commands.insertEmbedVideo.exec(element, "insertEmbedVideo", "<iframe width="560" height="315" src="http://www.youtube.com/embed/dJfSS0ZXYdo" frameborder="0" allowfullscreen></iframe>");
      */
@@ -703,6 +703,6 @@
   wysihtml5.commands.getAttributeValue = {
     exec: function (code,attr){
       return code.substring(parseInt(code.indexOf(attr))+attr.length + 2,code.length).split("\" ")[0];
-    }  
+    }
   };
 }(wysihtml5));
